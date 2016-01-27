@@ -2,15 +2,13 @@
 <section id="content" role="main">
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-		<h1><? the_title();?></h1>
-
-		<h2><em>Country: </em><? the_field('country');?></h2>
-		<? the_content()?>
-
-		<? $flag_image = get_field('flag_image');?>
+		<div>
+			<img src="<?=get_field('thumbnail');?>">
+			<img src="<?=get_field('large_img')['sizes']['medium'];?>">
+			hello
+			 <? the_field('url_project');?>, <? the_field('coworkers');?>
+		</div>
 		
-		<img src="<?=$flag_image["sizes"]["medium"];?>" >
-		<? //print_r(get_field('flag_image'));?>
 
 	<?php endwhile; endif; ?>
 	<br>
