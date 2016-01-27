@@ -116,11 +116,11 @@ function function_bm_projects() {
 add_action( 'init', 'function_bm_projects', 0 );
  
 
-add_action('wp_enqueue_script', 'BradMcGovern_load_scripts');
+add_action('init', 'BradMcGovern_load_scripts');
 function BradMcGovern_load_scripts(){
 	wp_enqueue_script('jquery');
-	wp_enqueue_script('script', get_template_directory()."/assets/js/script.js");
-	wp_enqueue_style('style', get_template_directory()."/assets/css/style.css");
+	wp_enqueue_script('script', get_template_directory_uri()."/assets/js/script.js");
+	wp_enqueue_style('style', get_template_directory_uri()."/assets/css/main.css");
 }
 /*
 // add_action( 'after_setup_theme', 'BradMcGovern_setup' );
